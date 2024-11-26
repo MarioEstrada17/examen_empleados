@@ -1,0 +1,53 @@
+@import '../../../../theme.scss';
+
+.title-dialog {
+    text-align: center;
+    color: black;
+    font-size: 1.3rem;
+    font-weight: 700 !important;
+    margin: 0px !important;
+    line-height: 25px;
+}
+.dialog-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    i {
+        margin-top: 5%;
+        margin-bottom: 5%;
+        &.question {
+            color: red;
+        }
+        &.info {
+            color: #FFDB58;
+        }
+    }
+    .question {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 8%;
+        padding: 0px 15px;
+        h6 {
+            color: gray;
+            margin: 0px !important;
+        }
+    }
+}
+.dialog-buttons {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    app-atomic-button {
+        &:nth-last-child(2),
+        &:nth-last-child(1) {
+            margin-left: 3%;
+        }
+    }
+}

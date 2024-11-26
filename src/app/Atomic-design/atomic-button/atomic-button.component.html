@@ -1,0 +1,8 @@
+<button 
+    matRipple
+    [matRippleColor]="rippleColor"
+    [ngClass]="[typeButton, color]"
+    (click)="action()"
+>
+    <i [ngClass]="icon"></i>  {{titleButton}}
+</button>

@@ -1,0 +1,23 @@
+<app-menu></app-menu>
+<div class="complete-container">
+    <div class="w95-container">
+        <app-atomic-back-section
+            title="Áreas"
+        ></app-atomic-back-section>
+        <div class="button-container-end mt-4">
+            <app-atomic-button
+                typeButton="padding"
+                icon="pi pi-database"
+                titleButton="Crear área"
+                (emitAction)="openDialog()"
+            ></app-atomic-button>
+        </div>
+        <app-atomic-table
+            [setDisplayedColumns]="displayColumns"
+            [hasPaginator]="true"
+            [setTableInformation]="areas"
+            [actionButtons]="actionsTable"
+            (actionButton)="actionButton($event)"
+        ></app-atomic-table>
+    </div>
+</div>

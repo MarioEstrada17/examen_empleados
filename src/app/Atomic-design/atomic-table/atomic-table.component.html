@@ -1,0 +1,19 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table-material">
+    <ng-container *ngFor="let cat of displayedColumns" [matColumnDef]="cat.columnName">
+      <th mat-header-cell *matHeaderCellDef class="table-header">{{cat.label}}</th>
+      <td mat-cell *matCellDef="let element" class="table-row">
+        <div class="plain-text" *ngIf="!cat.actions">
+          {{element[cat.columnName]}}
+        </div>
+        <div class="container-buttons" *ngIf="cat.actions && cat.typeActions === 'buttons'">
+          <button *ngFor="let actions of actionButtons" [matTooltip]="actions.tooltip" (click)="actionLinked(actions.action, element)"><i [ngClass]="actions.icon"></i></button>
+        </div>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="onlyDisplayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: onlyDisplayedColumns;"></tr>
+</table>
+<div class="table-sin-informacion" *ngIf="tableInformation.length === 0">
+  <h4>No hay información disponible</h4>
+</div>
+<mat-paginator *ngIf="hasPaginator" style="width: 100%;" #paginator [length]="tamanioTable" [pageSize]="5" class="shadow" [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>

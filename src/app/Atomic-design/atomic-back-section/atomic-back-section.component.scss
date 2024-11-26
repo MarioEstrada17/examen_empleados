@@ -1,0 +1,21 @@
+.back-container {
+    position: relative;
+    width: 95%;
+    margin-left: 5%;
+    margin-top: 5%;
+    .button-container {
+        position: relative;
+        width: 100%;
+        button {
+            background: transparent;
+            border: none;
+        }
+    }
+    h3 {
+        margin: 0px !important;
+        margin-top: 2% !important;
+        position: relative;
+        width: 100%;
+        text-align: center;
+    }
+}

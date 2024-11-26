@@ -1,0 +1,34 @@
+<div class="full-screen-container">
+    <div class="login-container">
+        <div class="logo-container">
+            <img src="../../../assets/img/logos/bal_black.svg" alt="logo" height="300">
+        </div>
+        <div class="form-container">
+            <app-atomic-subtitle
+                title="Iniciar sesión"
+                color="secondary"
+                align="center"
+            ></app-atomic-subtitle>
+            <form class="form" [formGroup]="formGroup">
+                <mat-form-field appearance="fill" floatLabel="always">
+                    <mat-label>Correo electrónico</mat-label>
+                    <input matInput type="email" formControlName="correo">
+                </mat-form-field>
+                <mat-form-field appearance="fill" floatLabel="always">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" formControlName="pass" maxlength="50">
+                    <span matSuffix (click)="hide = !hide"><mat-icon>{{hide ? 'visibility' : 'visibility_off'}}</mat-icon></span>
+                </mat-form-field>
+            </form>
+            <div class="button-container">
+                <app-atomic-button
+                    typeButton="complete"
+                    icon="fa-solid fa-unlock"
+                    color="secondary"
+                    titleButton="Iniciar sesión"
+                    (emitAction)="login()"
+                ></app-atomic-button>
+            </div>
+        </div>
+    </div>
+</div>

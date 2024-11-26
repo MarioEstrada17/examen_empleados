@@ -1,0 +1,39 @@
+<h3 mat-dialog-title class="title-dialog" *ngIf="data?.type === 'DELETE'">Eliminar Registro</h3>
+<h3 mat-dialog-title class="title-dialog" *ngIf="data?.type === 'UPDATE'">Actualizar Registro</h3>
+<h3 mat-dialog-title class="title-dialog" *ngIf="data?.type === 'INFO'">Información</h3>
+<h3 mat-dialog-title class="title-dialog" *ngIf="data?.type === 'QUESTION'">{{data?.title}}</h3>
+<div class="dialog-container" *ngIf="data?.type === 'DELETE'">
+    <i class="fa-regular fa-circle-question fa-4x question"></i>
+    <div class="question">
+        <h6>¿Esta seguro que desea eliminar este registro?</h6>
+        <h6>El registro se eliminar de forma permanente</h6>
+    </div>
+</div>
+<div class="dialog-container" *ngIf="data?.type === 'UPDATE'">
+    <i class="fa-regular fa-circle-question fa-4x question"></i>
+    <div class="question">
+        <h6>¿Esta seguro que desea actualizar este registro?</h6>
+    </div>
+</div>
+<div class="dialog-container" *ngIf="data?.type === 'INFO'">
+    <i class="fa-solid fa-info fa-4x info"></i>
+    <div class="question" [innerHTML]="data?.message"></div>
+</div>
+<div class="dialog-container" *ngIf="data?.type === 'QUESTION'">
+    <i class="fa-regular fa-circle-question fa-4x question"></i>
+    <div class="question" [innerHTML]="data?.message"></div>
+</div>
+<div mat-dialog-actions class="dialog-buttons" *ngIf="!data?.customButtons">
+    <app-atomic-button
+        typeButton="padding"
+        icon="fa-solid fa-ban"
+        titleButton="Cancelar"
+        (emitAction)="cancel()"
+    ></app-atomic-button>
+    <app-atomic-button
+        typeButton="padding"
+        icon="fa-solid fa-check"
+        titleButton="Aceptar"
+        (emitAction)="accept()"
+    ></app-atomic-button>
+</div>

@@ -1,0 +1,56 @@
+@import '../../../theme.scss';
+
+.snackbar {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .message {
+        position: relative;
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        &.success {
+            color: #5bc790;
+        }
+        &.customError,
+        &.warning,
+        &.error {
+            color: #cd5a59;
+        }
+        .text {
+            position: relative;
+            width: 100%;
+            h3 {
+                position: relative;
+                font-size: 16px !important;
+                font-weight: bold !important;
+                margin: 0px !important;
+            }
+            p {
+                position: relative;
+                font-size: .8rem;
+                font-weight: 500;
+                margin: 0px !important;
+            }
+        }
+        i {
+            margin-right: 2%;
+        }
+    }
+    .close {
+        i {
+            &.success {
+                color: #5bc790;
+            }
+            &.warning,
+            &.error {
+                color: #cd5a59;
+            }
+            cursor: pointer;
+        }
+    }
+}

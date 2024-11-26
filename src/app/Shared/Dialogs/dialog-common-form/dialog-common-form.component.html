@@ -1,0 +1,38 @@
+<h3 mat-dialog-title class="title-dialog">{{data?.title}}</h3>
+<div class="dialog-container">
+    <form [formGroup]="data?.formGroup" [ngClass]="data?.formClass">
+        <mat-form-field appearance="fill" floatLabel="always" *ngFor="let cat of data?.configFields">
+            <mat-label>{{cat.label}}</mat-label>
+            <textarea matInput rows="4" *ngIf="cat.type === 'textarea'" formControlName="{{cat.formControl}}" [maxlength]="cat.maxLength"></textarea>
+            <input 
+                matInput
+                *ngIf="cat.type === 'input'"
+                formControlName="{{cat.formControl}}"
+                [maxlength]="cat.maxLength"
+            >
+            <mat-select *ngIf="cat.type === 'select'" formControlName="{{cat.formControl}}">
+                <mat-option
+                    *ngFor="let element of cat.catalog"
+                    [value]="element[cat.value]" 
+                    [matTooltip]="cat.tooltip ? cat.conditionalTooltip === element[cat.value] ? cat.tooltip : '' : ''"
+                    [disabled]="element.disabled ? element.disabled : false"
+                >{{element[cat.labelOption]}}</mat-option>
+            </mat-select>
+            <mat-error>{{cat.error}}</mat-error>
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions class="dialog-buttons">
+    <app-atomic-button
+        typeButton="padding"
+        icon="fa-solid fa-ban"
+        titleButton="Cancelar"
+        (emitAction)="cancel()"
+    ></app-atomic-button>
+    <app-atomic-button
+        typeButton="padding"
+        icon="fa-regular fa-floppy-disk"
+        titleButton="Guardar"
+        (emitAction)="save()"
+    ></app-atomic-button>
+</div>

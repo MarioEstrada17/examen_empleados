@@ -1,1 +1,88 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "./theme.scss";
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+.full-screen-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+}
+.complete-container {
+    position: relative;
+    left: 17rem;
+    width: calc(100% - 17rem);
+    &.center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+.w95-container {
+    position: relative;
+    width: 95%;
+}
+.button-container-end {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.form-3col {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    mat-form-field {
+        width: 100%;
+        &.grid-column {
+            grid-column: span 3;
+        }
+    }
+}
+.form-2col {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    mat-form-field {
+        width: 100%;
+        &.grid-column {
+            grid-column: span 2;
+        }
+    }
+}
+.form {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    mat-form-field {
+        width: 100%;
+    }
+}
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: transparent !important;
+    border-bottom: 1px solid white !important;
+}
+.success-snack.mat-mdc-snack-bar-container {
+    .mdc-snackbar__surface {
+        background: lighten($color: #ecf9f2, $amount: 0);
+        min-width: 800px;
+    }
+}
+.error-snack.mat-mdc-snack-bar-container {
+    .mdc-snackbar__surface {
+        background: lighten($color: #fdf3f5, $amount: 0);
+        min-width: 800px;
+    }
+}

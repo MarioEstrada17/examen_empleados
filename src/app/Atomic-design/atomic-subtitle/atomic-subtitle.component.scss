@@ -1,0 +1,23 @@
+@import '../../../theme.scss';
+
+.subtitle {
+    position: relative;
+    font-size: 20px !important;
+    font-weight: 600;
+    width: 100%;
+    &.center {
+        text-align: center;
+    }
+    &.left {
+        text-align: left;
+    }
+    &.right {
+        text-align: right;
+    }
+    &.primary {
+        color: $primary-color;
+    }
+    &.secundary {
+        color: $secondary-color;
+    }
+}

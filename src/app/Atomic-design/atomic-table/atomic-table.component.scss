@@ -1,0 +1,59 @@
+@import '../../../theme.scss';
+
+.table-material {
+    margin-top: 4%;
+    width: 100%;
+}
+.table-header {
+    background: $primary-color !important;
+    color: white;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    text-align: center !important;
+}
+.table-row {
+    color: black !important;
+    text-align: center !important;
+    text-align: center;
+    .plain-text {
+        font-size: 12px !important;
+    }
+    .container-buttons {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        button {
+            margin-left: 2%;
+            background: transparent;
+            color: black;
+            border: transparent;
+            border-radius: 4px;
+            padding: 4px 8px;
+        }
+    }
+}
+td.mat-cell:first-child {
+    border-left: 2px solid $primary-color !important;
+}  
+td.mat-cell:last-child {
+    border-right: 2px solid $primary-color !important;
+}
+.table-sin-informacion {
+    border-right: 2px solid $primary-color;
+    border-left: 2px solid $primary-color;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #dddd;
+    h4 {
+        margin: 0px !important;
+        position: relative;
+        color: gray;
+        font-size: 1rem;
+    }
+}

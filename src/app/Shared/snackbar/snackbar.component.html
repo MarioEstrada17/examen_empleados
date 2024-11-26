@@ -1,0 +1,33 @@
+<div class="snackbar">
+    <div class="message" *ngIf="data.type === 'error'" [ngClass]="data.type">
+        <i class="fa-regular fa-circle-xmark fa-2x"></i>
+        <div class="text">
+            <h3>ERROR</h3>
+            <p>Operación no exitosa, reintente más tarde. 😔😔</p>
+        </div>
+    </div>
+    <div class="message" *ngIf="data.type === 'customError'" [ngClass]="data.type">
+        <i class="fa-regular fa-circle-xmark fa-2x"></i>
+        <div class="text">
+            <h3>ERROR</h3>
+            <p>{{data.subtitle}}. 😔😔</p>
+        </div>
+    </div>
+    <div class="message" *ngIf="data.type === 'success'" [ngClass]="data.type">
+        <i class="fa-regular fa-circle-check fa-2x"></i>
+        <div class="text">
+            <h3>EXITOSO</h3>
+            <p>{{data.subtitle}} 🥳🥳</p>
+        </div>
+    </div>
+    <div class="message" *ngIf="data.type === 'warning'" [ngClass]="data.type">
+        <i class="fa-solid fa-triangle-exclamation fa-2x"></i>
+        <div class="text">
+            <h3>ADVERTENCIA</h3>
+            <p>{{data.subtitle}}</p>
+        </div>
+    </div>
+    <div class="close" (click)="close()">
+        <i class="fa-solid fa-xmark" [ngClass]="data.type"></i>
+    </div>
+</div>

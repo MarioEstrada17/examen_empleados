@@ -1,0 +1,44 @@
+@import '../../../theme.scss';
+
+.menu-container {
+    position: fixed;
+    top: 0;
+    width: 17rem;
+    height: 100vh;
+    min-height: 100vh;
+    padding: 20px;
+    z-index: 199;
+    background: white;
+    .logo-container {
+        position: relative;
+        width: 100%;
+        margin-bottom: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: row;
+        .information {
+            margin-left: 5%;
+            h6 {
+                margin: 0px !important;
+                width: 95%;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+        }
+    }
+    .menu {
+        height: calc(100% - 4rem);
+        overflow-y: auto;
+        scrollbar-width: thin;
+    }
+}
+::ng-deep .p-panelmenu .p-panelmenu-header .p-panelmenu-header-content {
+    background: white !important;
+    color: $primary-color !important;
+    border: 1px solid white !important
+}
+::ng-deep .p-panelmenu .p-panelmenu-content {
+    border: 1px solid white !important;
+}

@@ -1,0 +1,64 @@
+@import '../../../../theme.scss';
+
+.title-dialog {
+    text-align: center;
+    color: black;
+    font-size: 1.3rem;
+    font-weight: 700 !important;
+}
+.dialog-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .form-3col {
+        position: relative;
+        width: 80%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        mat-form-field {
+            width: 100%;
+            &.span {
+                grid-column: span 3;
+            }
+        }
+    }
+    .form-2col {
+        position: relative;
+        width: 80%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        mat-form-field {
+            width: 100%;
+            &.span {
+                grid-column: span 2;
+            }
+        }
+    }
+    .form {
+        position: relative;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        mat-form-field {
+            width: 100%;
+        }
+    }
+}
+.dialog-buttons {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    app-atomic-button {
+        &:nth-last-child(1) {
+            margin-left: 3%;
+        }
+    }
+}
